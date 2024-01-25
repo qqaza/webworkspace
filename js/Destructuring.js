@@ -1,6 +1,6 @@
 console.log('Destructuring');
 
-// Object
+// Object 연습
 
 function getUserInfo(){
     return {
