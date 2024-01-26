@@ -1,9 +1,13 @@
 //Promise 
 let test = new Promise((resolve, reject)=>{
-    setTimeout(()=> console.log('비동기 작업 실행'), 1000);
+    setTimeout(()=>{
+         console.log('비동기 작업 실행');
+         resolve('작업성공');
+         },1000);
 });
 test
-.catch(err=> console.log(err))
+.then(data => console.log('then', data))
+.catch(err=> console.log('catch', err))
 .finally(()=>console.log('작업 끝!'));
 
 
