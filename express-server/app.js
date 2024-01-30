@@ -1,7 +1,9 @@
 const fs = require('fs');
 const express = require('express');
+//경로를 찾아가야함.
+const userRouter = require('./user.js');
 const app = express();
-//미드웨어
+//미들웨어
 //-- Request Data Process
 
 //application/json
@@ -50,6 +52,8 @@ const getData = (target, where)=>{
     }
     return data;
 }
+//user 경로와 맵핑(user.js 에서 만듬)
+app.use('/user', userRouter);
 
 //포트지정
 app.listen(3000, ()=>{
@@ -115,6 +119,7 @@ app.delete('/posts/:id', (req, res)=>{
 });
 
 //검색을 포함하는 경우 -> QueryString
+//list[0].id=100&list[0].name=Hong&
 app.get('/search', (req, res)=>{
     let keywards = req.query;
     console.log('검색조건 구성', keywards);
