@@ -81,4 +81,3 @@ function getInfo(obj){
     }
     return newAry; //  ["hkhong@email.com", "010-1234-5678","null"]
 };
-

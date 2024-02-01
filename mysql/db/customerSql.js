@@ -1,5 +1,4 @@
 //customersSql.js
-
 //조회
 let customerList =
 `SELECT id
